@@ -1,0 +1,27 @@
+﻿@model item_model
+
+@{
+    ViewData["title"] = "edit item";
+}
+<div class="text-center">
+    <h1 class="display-4">
+        alteração de Itens
+    </h1>
+    <form method="post" asp-controller="itemController1" asp-action="edit">
+        <div class="form-group">
+            <label for="TESTENOME">nome do item</label>
+            <input type="text" asp-for="Nome" class="form-control" id="TESTENOME" placeholder="nome do item">
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="TESTEQNTD">quantidade</label>
+            <input type="number" asp-for="Quantidade" class="form-control" id="TESTEQNTD" placeholder="qunatidade do item">
+            <span asp-validation-for="Quantidade" class="text-danger"></span>
+        </div>
+
+
+        <button type="submit" class="btn btn-warning ">alterar</button>
+        <a role="button" class="btn btn-secondary " asp-controller="ItemController1" asp-action="Index"> voltar </a>
+    </form>
+
+</div>
